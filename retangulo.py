@@ -4,11 +4,12 @@ __author__ = "CrackTxt"
 
 
 # Calculo de retangulo com classe e validação de interação ::
+# _VariaveisOcultas
 class retangulo:
 
     def __init__(self, largura, altura):
-        self.largura = 0
-        self.altura = 0
+        self._largura = 0
+        self._altura = 0
         self.set_altura(altura)
         self.set_largura(largura)
 
@@ -22,10 +23,12 @@ class retangulo:
 
         if (not (isinstance(largura, int) and (largura > 0))):
             raise ValueError(f"Largura Invalida: {largura}")
+        self.largura = largura
 
-    def get_altura(self):
+    def get_area(self):
         return self.altura * self.largura
 
-
-r = retangulo(largura=10, altura=8)
-print(r.altura)
+r = retangulo(altura=10, largura=10)
+a = r.altura
+l = r.largura
+print(r.get_area())
